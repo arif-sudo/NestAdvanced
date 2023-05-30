@@ -10,7 +10,7 @@ export class RolesController {
     create(@Body() roleDto: CreateRoleDto){
         return this.roleService.createRole(roleDto)
     }
-
+    //@Body() is a decorator used in NestJS to indicate that the userDto parameter should be extracted from the request body of an incoming HTTP request
     @Get('/:value')
     getByValue(@Param('value') value: string){
         return this.roleService.getRoleByValue(value)
