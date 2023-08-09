@@ -27,7 +27,8 @@ export class UsersController {
 
     @ApiOperation({summary: "Getting all users"})
     @ApiResponse({status: 200, type: [User] })
-    // @Roles("ADMIN")
+    @Roles("ADMIN")
+    @UseGuards(RolesGuard)
     @UseGuards(JwtAuthGuard)
     @Get()
     getAll(){
