@@ -26,16 +26,17 @@ import * as path from 'path';
         SequelizeModule.forRoot({
             dialect: 'postgres',
             host: process.env.POSTGRES_HOST,
-            port: Number(process.env.POSTGRES_PORT),
+            port: +process.env.POSTGRES_PORT,
             username: process.env.POSTGRES_USER,
             password: process.env.POSTGRES_PASSWORD,
             database: process.env.POSTGRES_DB,
             models: [User, Role, UserRole, Post],
-            autoLoadModels: true
+            autoLoadModels: true,
+            synchronize: true,
         }),
         UsersModule,
         RolesModule,
-        AuthModule,
+        AuthModule, 
         PostsModule,
         FilesModule,
     ]

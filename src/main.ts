@@ -8,10 +8,15 @@ import { ValidationPipe } from "./pipe/validation.pipe";
 dotenv.config()
 
 async function start() {
-    const PORT = process.env.PORT || 5000;
+    const PORT = process.env.PORT || 3000;
     const app = await NestFactory.create(AppModule)
 
-    const config = new DocumentBuilder().setTitle('Backend with Nest js').setDescription('Rest api documentation').setVersion('1.0.0').addTag('Ark Docs').build();
+    const config = new DocumentBuilder()
+    .setTitle('Backend with Nest js')
+    .setDescription('Rest api documentation')
+    .setVersion('1.0.0')
+    .addTag('Ark Docs')
+    .build();
 
     const document = SwaggerModule.createDocument(app, config)
     SwaggerModule.setup('/api/docs', app, document)
