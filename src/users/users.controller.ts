@@ -27,7 +27,7 @@ export class UsersController {
 
     @ApiOperation({summary: "Getting all users"})
     @ApiResponse({status: 200, type: [User] })
-    @Roles("ADMIN")
+    @Roles("Admin")
     @UseGuards(RolesGuard)
     @UseGuards(JwtAuthGuard)
     @Get()
@@ -37,7 +37,7 @@ export class UsersController {
 
     @ApiOperation({summary: "Roles give away"})
     @ApiResponse({status: 200})
-    @Roles("ADMIN")
+    @Roles("Admin")
     @UseGuards(RolesGuard)
     @Post('/role')
     addRole(@Body() dto: AddRoleDto ){
@@ -46,7 +46,7 @@ export class UsersController {
 
     @ApiOperation({summary: "Banning user"})
     @ApiResponse({status: 200})
-    @Roles("ADMIN")
+    @Roles("Admin")
     @UseGuards(RolesGuard)
     @Post('/ban')
     ban(@Body() dto: BanUserDto ){
