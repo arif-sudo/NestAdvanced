@@ -23,7 +23,7 @@ export class Post extends Model<Post, PostCreationAttrs>{
     image: string;    
 
     @ForeignKey(() => User)
-    @Column({type: DataType.INTEGER})
+    @Column({type: DataType.INTEGER, defaultValue: 6 })
     userId: number
 
     @BelongsTo(() => User)

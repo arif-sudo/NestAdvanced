@@ -20,9 +20,9 @@ import * as path from 'path';
         ConfigModule.forRoot({
             envFilePath: `.${process.env.NODE_ENV}.env`
         }),
-        // ServeStaticModule.forRoot({
-        //     rootPath: path.resolve(__dirname, 'static');
-        // }), for dividing statics i.e. opening images in web browser
+        ServeStaticModule.forRoot({
+            rootPath: path.resolve(__dirname, 'static')
+        }),// for dividing statics i.e. opening images in web browser
         SequelizeModule.forRoot({
             dialect: 'postgres',
             host: process.env.POSTGRES_HOST,

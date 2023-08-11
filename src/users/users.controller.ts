@@ -1,4 +1,4 @@
-import { Controller, Post, Get, Body, UseGuards, UsePipes } from '@nestjs/common';
+import { Controller, Post, Get, Body, UseGuards } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user-dto';
 import { UsersService } from './users.service';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
@@ -9,7 +9,6 @@ import { Roles } from 'src/auth/roles.auth.decorator';
 import { RolesGuard } from 'src/auth/roles.guard';
 import { AddRoleDto } from './dto/add-role.dto';
 import { BanUserDto } from './dto/ban.dto';
-import { ValidationPipe } from 'src/pipe/validation.pipe';
 
 @ApiTags('Users')
 @Controller('users')

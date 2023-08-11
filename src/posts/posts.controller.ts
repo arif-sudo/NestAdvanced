@@ -5,12 +5,11 @@ import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('posts')
 export class PostsController {
-
-    constructor(private postsService: PostsService){}
+    constructor(private postsService: PostsService) { }
 
     @Post()
     @UseInterceptors(FileInterceptor('image'))
-    createPost(@Body() dto: CreatePostDto, @UploadedFile() image:any ){
-        return  this.postsService.create(dto, image)
+    createPost(@Body() dto: CreatePostDto, @UploadedFile() image: any) {
+        return this.postsService.create(dto, image)
     }
 }
