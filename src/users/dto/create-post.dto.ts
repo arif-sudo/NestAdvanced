@@ -11,6 +11,6 @@ export class CreatePostDto {
     readonly content: string;
 
     @ApiProperty({ example: '1', description: 'user id' })
-    // @IsNumber({}, {message: "Should be a number💀"})
-    readonly userId: any;
+    @IsNumber({}, {message: "Should be a number💀"})
+    readonly userId: number;
 }
